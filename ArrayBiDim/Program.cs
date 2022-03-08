@@ -7,7 +7,7 @@ namespace ArrayBiDim
         static void Main(string[] args)
         {
             // The bi-dimensional float array
-            float[][] biDim;
+            float[,] biDim;
 
             // Variables to store array dimensions
             int h, v;
@@ -22,6 +22,19 @@ namespace ArrayBiDim
 
             // Define array dimensions based on INT variables
             biDim = new float[h, v];
+
+            // Go through each line in the array
+            for (int i = 0; i < biDim.GetLength(0); i++)
+            {
+                for (int j = 0; j < biDim.GetLength(1); j++)
+                {
+                    // Request value for each array position
+                    Console.Write($"Assign a float value to position {i}, {j}: ");
+
+                    // Save array value from user input
+                    biDim[i, j] = Convert.ToSingle(Console.ReadLine());
+                }
+            }
         }
     }
 }
