@@ -13,8 +13,8 @@ namespace ArrayBiDim
             int h, v;
 
             // Variables to store average and sum values
-            float val = 0;
-            float[] avg, sum;
+            float val = 0, sum = 0;
+            float[] avg;
 
             // Ask user for array horizontal values and store in INT
             Console.Write("Array horizontal dimensions: ");
@@ -48,9 +48,20 @@ namespace ArrayBiDim
                 val = 0;
             }
 
+            // Add space before results
+            Console.WriteLine();
+
             // Print average values for each line
             for (int i = 0; i < avg.Length; i++)
+            {
                 Console.WriteLine($"Average for line {i}: {avg[i]}");
+
+                // Add current line's average to sum value
+                sum += avg[i];
+            }
+
+            // Print sum of all averages
+            Console.WriteLine($"Sum of all line averages: {sum}");
         }
     }
 }
