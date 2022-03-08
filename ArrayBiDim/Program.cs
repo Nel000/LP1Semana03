@@ -12,6 +12,10 @@ namespace ArrayBiDim
             // Variables to store array dimensions
             int h, v;
 
+            // Variables to store average and sum values
+            float val = 0;
+            float[] avg, sum;
+
             // Ask user for array horizontal values and store in INT
             Console.Write("Array horizontal dimensions: ");
             h = Convert.ToInt32(Console.ReadLine());
@@ -22,10 +26,11 @@ namespace ArrayBiDim
 
             // Define array dimensions based on INT variables
             biDim = new float[h, v];
+            avg = new float[h];
 
             // Go through each line in the array
             for (int i = 0; i < biDim.GetLength(0); i++)
-            {
+            {   
                 for (int j = 0; j < biDim.GetLength(1); j++)
                 {
                     // Request value for each array position
@@ -33,8 +38,19 @@ namespace ArrayBiDim
 
                     // Save array value from user input
                     biDim[i, j] = Convert.ToSingle(Console.ReadLine());
+
+                    // Add position value to values INT
+                    val += biDim[i, j];
                 }
+
+                // Assign current average to variable and reset values INT
+                avg[i] = val / h;
+                val = 0;
             }
+
+            // Print average values for each line
+            for (int i = 0; i < avg.Length; i++)
+                Console.WriteLine($"Average for line {i}: {avg[i]}");
         }
     }
 }
