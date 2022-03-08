@@ -25,13 +25,14 @@ namespace PercorreString
             // Convert char in string to char variable
             c = sC[0];
             
+            // Inform user of what's going to be printed
             Console.Write($"'{s}' without '{c}': ");
 
-            // FOR loop prints string char by char, whitout user input char
-            for (int i = 0; i < s.Length; i++)
+            // FOREACH loop prints string char by char, without user input char
+            foreach(char aC in s)
             {
-                if (s[i] != c)
-                    Console.Write(s[i]);
+                if (aC != c)
+                    Console.Write(aC);
             }
         }
     }
