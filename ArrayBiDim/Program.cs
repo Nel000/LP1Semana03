@@ -25,8 +25,8 @@ namespace ArrayBiDim
             v = Convert.ToInt32(Console.ReadLine());
 
             // Define array dimensions based on INT variables
-            biDim = new float[h, v];
-            avg = new float[h];
+            biDim = new float[v, h];
+            avg = new float[v];
 
             // Go through each line in the array
             for (int i = 0; i < biDim.GetLength(0); i++)
