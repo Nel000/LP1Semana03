@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PercorreString", "PercorreS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayBiDim", "ArrayBiDim\ArrayBiDim.csproj", "{ECCA3AB2-4D26-470B-A2DE-E96025125AE3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPCPerks", "NPCPerks\NPCPerks.csproj", "{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,5 +46,17 @@ Global
 		{ECCA3AB2-4D26-470B-A2DE-E96025125AE3}.Release|x64.Build.0 = Release|Any CPU
 		{ECCA3AB2-4D26-470B-A2DE-E96025125AE3}.Release|x86.ActiveCfg = Release|Any CPU
 		{ECCA3AB2-4D26-470B-A2DE-E96025125AE3}.Release|x86.Build.0 = Release|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Debug|x64.Build.0 = Debug|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Debug|x86.Build.0 = Debug|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|x64.ActiveCfg = Release|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|x64.Build.0 = Release|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|x86.ActiveCfg = Release|Any CPU
+		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
