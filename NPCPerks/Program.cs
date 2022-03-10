@@ -33,14 +33,13 @@ namespace NPCPerks
             // Assign number of NPCs to traits variable
             npcTraits = new NPCTraits[npcNum];
 
-            // Request traits for each NPC
-            Console.WriteLine("For each NPC, insert up to 4 traits:");
-
             // Details on trait attribution
-            Console.WriteLine("Stealth");
-            Console.WriteLine("Combat");
-            Console.WriteLine("Lockpick");
-            Console.WriteLine("Luck");
+            Console.WriteLine("For each NPC, insert up to 4 traits:");      
+            Console.WriteLine("-Stealth");
+            Console.WriteLine("-Combat");
+            Console.WriteLine("-Lockpick");
+            Console.WriteLine("-Luck");
+            Console.WriteLine("Type 'Stop' if NPC doesn't need more traits");
 
             // FOR loop to the amount given by the user
             for (int i = 0; i < npcNum; i++)
@@ -60,18 +59,52 @@ namespace NPCPerks
                     switch (traitName)
                     {
                         case "Stealth":
-                            // Assign 'Stealth' trait to current NPC
-                            npcTraits[i] |= NPCTraits.Stealth;
+                            if ((npcTraits[i] & NPCTraits.Stealth) 
+                                == NPCTraits.Stealth)
+                            {
+                                // Refuse trait and try to get a new one
+                                Console.WriteLine("NPC already has 'Stealth'");
+                                j--;
+                            }
+                            else
+                            {
+                                // Assign 'Stealth' trait to current NPC
+                                npcTraits[i] |= NPCTraits.Stealth;
+                            }
                             break;
                         case "Combat":
-                            // Assign 'Combat' trait to current NPC
-                            npcTraits[i] |= NPCTraits.Combat;
+                            if ((npcTraits[i] & NPCTraits.Combat) 
+                                == NPCTraits.Combat)
+                            {
+                                // Refuse trait and try to get a new one
+                                Console.WriteLine("NPC already has 'Combat'");
+                                j--;
+                            }
+                            else
+                            {   
+                                // Assign 'Combat' trait to current NPC
+                                npcTraits[i] |= NPCTraits.Combat;
+                            }
                             break;
                         case "Lockpick":
+                            if ((npcTraits[i] & NPCTraits.Lockpick) 
+                                == NPCTraits.Lockpick)
+                            {
+                                // Refuse trait and try to get a new one
+                                Console.WriteLine("NPC already has 'Lockpick'");
+                                j--;
+                            }
                             // Assign 'Lockpick' trait to current NPC
                             npcTraits[i] |= NPCTraits.Lockpick;
                             break;
                         case "Luck":
+                            if ((npcTraits[i] & NPCTraits.Luck) 
+                                == NPCTraits.Luck)
+                            {
+                                // Refuse trait and try to get a new one
+                                Console.WriteLine("NPC already has 'Luck'");
+                                j--;
+                            }
                             // Assign 'Luck' trait to current NPC
                             npcTraits[i] |= NPCTraits.Luck;
                             break;
