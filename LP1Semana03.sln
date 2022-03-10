@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayBiDim", "ArrayBiDim\Ar
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NPCPerks", "NPCPerks\NPCPerks.csproj", "{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GitBranching", "GitBranching\GitBranching.csproj", "{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,5 +60,17 @@ Global
 		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|x64.Build.0 = Release|Any CPU
 		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|x86.ActiveCfg = Release|Any CPU
 		{967F6FCF-1985-4F4F-903D-9BA56BA8EE49}.Release|x86.Build.0 = Release|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Debug|x64.Build.0 = Debug|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Debug|x86.Build.0 = Debug|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Release|x64.ActiveCfg = Release|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Release|x64.Build.0 = Release|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Release|x86.ActiveCfg = Release|Any CPU
+		{9FA9AEE4-7DB3-4ADE-817D-94CE3F9F652E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

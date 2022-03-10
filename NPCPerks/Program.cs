@@ -85,7 +85,7 @@ namespace NPCPerks
                     }
                     j++;
                 } 
-                while (!hasEnded || j < 4);
+                while (!hasEnded || j < traits);
             }
 
             // Goes through array of NPCs
