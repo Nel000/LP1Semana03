@@ -94,8 +94,11 @@ namespace NPCPerks
                                 Console.WriteLine("NPC already has 'Lockpick'");
                                 j--;
                             }
-                            // Assign 'Lockpick' trait to current NPC
-                            npcTraits[i] |= NPCTraits.Lockpick;
+                            else
+                            {   
+                                // Assign 'Lockpick' trait to current NPC
+                                npcTraits[i] |= NPCTraits.Lockpick;
+                            }
                             break;
                         case "Luck":
                             if ((npcTraits[i] & NPCTraits.Luck) 
@@ -105,8 +108,11 @@ namespace NPCPerks
                                 Console.WriteLine("NPC already has 'Luck'");
                                 j--;
                             }
-                            // Assign 'Luck' trait to current NPC
-                            npcTraits[i] |= NPCTraits.Luck;
+                            else
+                            {
+                                // Assign 'Luck' trait to current NPC
+                                npcTraits[i] |= NPCTraits.Luck;
+                            }
                             break;
                         case "Stop":
                             // Stop requesting traits for current NPC
