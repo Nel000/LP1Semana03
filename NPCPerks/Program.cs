@@ -31,12 +31,12 @@ namespace NPCPerks
             Console.WriteLine();
 
             // Details on trait attribution
-            Console.WriteLine("For each NPC, insert up to 4 traits:");      
+            Console.WriteLine("For each NPC, insert up to 4 perks:");      
             Console.WriteLine("-Stealth");
             Console.WriteLine("-Combat");
             Console.WriteLine("-Lockpick");
             Console.WriteLine("-Luck");
-            Console.WriteLine("Type 'Stop' if NPC doesn't need more traits");
+            Console.WriteLine("Type 'Stop' if NPC doesn't need more perks");
 
             // Extra line before assigning process
             Console.WriteLine();
@@ -48,7 +48,7 @@ namespace NPCPerks
                 for (int k = 0; k < traits; k++)
                 {
                     // Request trait for current NPC
-                    Console.Write($"NPC {i + 1} - Trait {k + 1}: ");
+                    Console.Write($"NPC {i + 1} - Perk {k + 1}: ");
 
                     // Store user input as current trait
                     traitName = Console.ReadLine();
@@ -131,8 +131,20 @@ namespace NPCPerks
             // Go through array of NPCs
             for (int i = 0; i < npcNum; i++)
             {
-                // Details for current NPC
-                Console.WriteLine($"NPC {i + 1} has : {npcTraits[i]}");
+                // Check if current NPC has no traits
+                if ((npcTraits[i] & NPCTraits.Combat) != NPCTraits.Combat
+                    && (npcTraits[i] & NPCTraits.Combat) != NPCTraits.Combat
+                    && (npcTraits[i] & NPCTraits.Lockpick) != NPCTraits.Lockpick
+                    && (npcTraits[i] & NPCTraits.Luck) != NPCTraits.Luck)
+                {
+                    // Details for current NPC
+                    Console.WriteLine($"NPC {i + 1} has no perks");
+                }
+                else
+                {
+                    // Details for current NPC
+                    Console.WriteLine($"NPC {i + 1} has : {npcTraits[i]}");
+                }
 
                 // Check if current NPC has Combat and Luck perks
                 if ((npcTraits[i] & NPCTraits.Combat) == NPCTraits.Combat
