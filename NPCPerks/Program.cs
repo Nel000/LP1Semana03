@@ -8,21 +8,25 @@ namespace NPCPerks
         {
             // Reference to NPC traits enum
             NPCTraits[] npcTraits;
+            NPCTraits currentTrait;
 
             // The number of NPCs
             int npcNum;
 
-            // The amount of NPC traits
-            int traits = 4;
+            // Array containing all trait names
+            string[] traitNames = new string[] 
+            {
+            "Stealth", 
+            "Combat", 
+            "Lockpick",
+            "Luck"
+            };
 
-            // The name of the current trait
-            string traitName;
+            // Current user input
+            string input;
 
             // Defines when to stop attributing perks to an NPC
             bool hasEnded;
-
-            // Auxiliary variable
-            int j;
 
             // Ask user for number of NPCs
             Console.Write("Insert the number of NPCs in your game: ");
@@ -33,101 +37,49 @@ namespace NPCPerks
             // Assign number of NPCs to traits variable
             npcTraits = new NPCTraits[npcNum];
 
-            // Details on trait attribution
-            Console.WriteLine("For each NPC, insert up to 4 traits:");      
-            Console.WriteLine("-Stealth");
-            Console.WriteLine("-Combat");
-            Console.WriteLine("-Lockpick");
-            Console.WriteLine("-Luck");
-            Console.WriteLine("Type 'Stop' if NPC doesn't need more traits");
-
             // FOR loop to the amount given by the user
             for (int i = 0; i < npcNum; i++)
             {
-                // Begin assigning process
-                hasEnded = false;
-                j = 0;
-                do 
+                for (int j = 0; j < traitNames.Length; j++)
                 {
-                    // Ask for trait for current NPC
-                    Console.Write($"NPC {i + 1} - Trait {j + 1}: ");
+                    // Begin assigning process
+                    hasEnded = false;
+                    
+                    // Go through possible options
+                    do
+                    {   
+                        // Ask if NPC has a trait
+                        Console.WriteLine(
+                            $"Does NPC {i + 1} have {traitNames[j]}? (y/n)");
+                        // Store user input
+                        input = Console.ReadLine();
 
-                    // Store user input as current trait
-                    traitName = Console.ReadLine();
+                        switch (input)
+                        {
+                            case "y":
+                                // Convert name in string[] to equivalent in enum
+                                Enum.TryParse(traitNames[j], out currentTrait);
 
-                    // Go through all possible options
-                    switch (traitName)
-                    {
-                        case "Stealth":
-                            if ((npcTraits[i] & NPCTraits.Stealth) 
-                                == NPCTraits.Stealth)
-                            {
-                                // Refuse trait and try to get a new one
-                                Console.WriteLine("NPC already has 'Stealth'");
-                                j--;
-                            }
-                            else
-                            {
-                                // Assign 'Stealth' trait to current NPC
-                                npcTraits[i] |= NPCTraits.Stealth;
-                            }
-                            break;
-                        case "Combat":
-                            if ((npcTraits[i] & NPCTraits.Combat) 
-                                == NPCTraits.Combat)
-                            {
-                                // Refuse trait and try to get a new one
-                                Console.WriteLine("NPC already has 'Combat'");
-                                j--;
-                            }
-                            else
-                            {   
-                                // Assign 'Combat' trait to current NPC
-                                npcTraits[i] |= NPCTraits.Combat;
-                            }
-                            break;
-                        case "Lockpick":
-                            if ((npcTraits[i] & NPCTraits.Lockpick) 
-                                == NPCTraits.Lockpick)
-                            {
-                                // Refuse trait and try to get a new one
-                                Console.WriteLine("NPC already has 'Lockpick'");
-                                j--;
-                            }
-                            else
-                            {   
-                                // Assign 'Lockpick' trait to current NPC
-                                npcTraits[i] |= NPCTraits.Lockpick;
-                            }
-                            break;
-                        case "Luck":
-                            if ((npcTraits[i] & NPCTraits.Luck) 
-                                == NPCTraits.Luck)
-                            {
-                                // Refuse trait and try to get a new one
-                                Console.WriteLine("NPC already has 'Luck'");
-                                j--;
-                            }
-                            else
-                            {
-                                // Assign 'Luck' trait to current NPC
-                                npcTraits[i] |= NPCTraits.Luck;
-                            }
-                            break;
-                        case "Stop":
-                            // Stop requesting traits for current NPC
-                            hasEnded = true;
-                            break;
-                        default:
-                            // Retry getting trait for current NPC
-                            Console.WriteLine("Not a valid trait");
-                            j--;
-                            break;
+                                // Assign current trait to current NPC
+                                npcTraits[i] |= currentTrait;
+
+                                // End loop
+                                hasEnded = true;
+                                break;
+                            case "n":
+                                // End loop
+                                hasEnded = true;
+                                break;
+                            default:
+                                // Inform user that they gave an invalid answer
+                                Console.WriteLine(
+                                    "Invalid option");
+                                break;
+                        }
                     }
-                    j++;
+                    // Move onto next trait once user gave a valid answer 
+                    while (!hasEnded);
                 }
-                // Stop when END condition is met or NPC already has max traits
-                while (!hasEnded || j < traits);
             }
 
             // Go through array of NPCs
@@ -141,7 +93,7 @@ namespace NPCPerks
                     && (npcTraits[i] & NPCTraits.Luck) == NPCTraits.Luck)
                 {
                     // Print special message
-                    Console.WriteLine("You shall win all fights!");
+                    Console.WriteLine("\tYou shall win all fights!");
                 }
             }
         }
