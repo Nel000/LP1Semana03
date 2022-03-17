@@ -56,7 +56,7 @@ namespace NPCPerks
 
                         switch (input)
                         {
-                            case "y":
+                            case "y": case "Y":
                                 // Convert name in string[] to equivalent in enum
                                 Enum.TryParse(traitNames[j], out currentTrait);
 
@@ -66,7 +66,7 @@ namespace NPCPerks
                                 // End loop
                                 hasEnded = true;
                                 break;
-                            case "n":
+                            case "n": case "N":
                                 // End loop
                                 hasEnded = true;
                                 break;
@@ -82,11 +82,26 @@ namespace NPCPerks
                 }
             }
 
+            // Extra line before results
+            Console.WriteLine();
+
             // Go through array of NPCs
             for (int i = 0; i < npcNum; i++)
             {
-                // Details for current NPC
-                Console.WriteLine($"NPC {i + 1} has : {npcTraits[i]}");
+                // Check if current NPC has no traits
+                if ((npcTraits[i] & NPCTraits.Combat) != NPCTraits.Combat
+                    && (npcTraits[i] & NPCTraits.Combat) != NPCTraits.Combat
+                    && (npcTraits[i] & NPCTraits.Lockpick) != NPCTraits.Lockpick
+                    && (npcTraits[i] & NPCTraits.Luck) != NPCTraits.Luck)
+                {
+                    // Details for current NPC
+                    Console.WriteLine($"NPC {i + 1} has no perks");
+                }
+                else
+                {
+                    // Details for current NPC
+                    Console.WriteLine($"NPC {i + 1} has : {npcTraits[i]}");
+                }
 
                 // Check if current NPC has Combat and Luck perks
                 if ((npcTraits[i] & NPCTraits.Combat) == NPCTraits.Combat
